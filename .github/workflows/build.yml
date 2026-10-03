@@ -22,12 +22,12 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Build APK with Native Libs
-      run: ./gradlew assembleRelease
+    - name: Build Debug APK
+      run: ./gradlew assembleDebug
 
     - name: Upload .so Artifact
       uses: actions/upload-artifact@v4
       with:
         name: libMyMod.so
-        path: app/build/outputs/apk/release/
+        path: app/build/outputs/apk/debug/
         
